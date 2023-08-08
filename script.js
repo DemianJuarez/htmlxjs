@@ -1,4 +1,4 @@
-function calculateTotalPrice(price, discount) {
+/*function calculateTotalPrice(price, discount) {
   const discountToApply = (price * discount) / 100;
   const totalPrice = price - discountToApply;
   return totalPrice;
@@ -44,8 +44,9 @@ const airpods = crearProducto(
 alert(macbook);
 alert(iphone);
 alert(airpods);
+*/
 
-class Producto {
+/*class Producto {
   constructor(title, price, discount, description) {
     this.title = title;
     this.price = price;
@@ -55,10 +56,57 @@ class Producto {
 }
 
 let listProductos = [];
-
 const Iphone14 = new Producto("Iphone14", 1200, 10, "goat");
 listProductos.push(Iphone14);
 const PlayStation5 = new Producto("PlayStation5", 500, 10, "messi");
 listProductos.push(PlayStation5);
 
+function createProduct(indice,title,price,discount,description){
+    let indice = new Producto(title,price,discount,description)
+}
+
 console.log(listProductos);
+
+createProduct("ball", "Pelota",290,10,"ronaldo")*/
+
+let products = [];
+
+function createProduct(title, price, discount, description){
+    let product = {
+        title,
+        price,
+        discount,
+        description,
+    };
+
+    return product;
+}
+
+function subirProducts(producto, array) {
+    array.push(producto);
+    return array;
+}
+
+let teemo = {
+    nombre: "temmo",
+    admin: true,
+}
+
+
+function login(usuario){
+    if (usuario.admin) {
+        subirProducts(
+            createProduct("termo",1000,10,"TERMO STANLEY"),
+            products,
+            );
+        subirProducts(
+            createProduct("gol",300,10,"reh"),
+            products,
+        )
+    } else {
+        alert("cant entrar")
+    }
+};
+
+login(teemo)
+console.log(products)
