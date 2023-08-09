@@ -87,14 +87,19 @@ function subirProducts(producto, array) {
     return array;
 }
 
-let teemo = {
-    nombre: "temmo",
-    admin: true,
+let admin = {
+  name: "admin",
+  pass: "1234",
+  admin: true,
 }
 
 
-function login(usuario){
-    if (usuario.admin) {
+function login(){
+    let user = prompt("Enter your username");
+    let pass = prompt("Enter your password");
+
+
+    if (admin.name === user && admin.pass === pass) {
         subirProducts(
             createProduct("termo",1000,10,"TERMO STANLEY"),
             products,
@@ -103,10 +108,26 @@ function login(usuario){
             createProduct("gol",300,10,"reh"),
             products,
         )
+        let addMore = prompt("2 productos default agregados. Desea agregar mas? (y/n)")
+        while (addMore === 'y') {
+          let title = prompt("add title");
+          let price = prompt("add price");
+          let discount = prompt("add discount");
+          let description = prompt("add description");
+
+          subirProducts(
+            createProduct(title, price, discount, description),
+            products,
+          );
+
+          addMore = prompt("Desea agregar mas? (y/n)");
+        }
+        if (addMore === 'n') {
+          console.log(products)
+        }
     } else {
-        alert("cant entrar")
-    }
+      alert("no pass broda");
+    };
 };
 
-login(teemo)
-console.log(products)
+login();
