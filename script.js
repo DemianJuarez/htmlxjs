@@ -95,21 +95,12 @@ let admin = {
 
 
 function login(){
-    let user = prompt("Enter your username");
-    let pass = prompt("Enter your password");
-
-
-    if (admin.name === user && admin.pass === pass) {
-        subirProducts(
-            createProduct("termo",1000,10,"TERMO STANLEY"),
-            products,
-            );
-        subirProducts(
-            createProduct("gol",300,10,"reh"),
-            products,
-        )
-        let addMore = prompt("2 productos default agregados. Desea agregar mas? (y/n)")
-        while (addMore === 'y') {
+      for (let i = 1; i < 4; i++){
+        let user = prompt("Enter your username");
+        let pass = prompt("Enter your password");
+      if (admin.name === user && admin.pass === pass) {
+        let add = prompt("Quiere agregar un producto (y/n)")
+        while (add === 'y') {
           let title = prompt("add title");
           let price = prompt("add price");
           let discount = prompt("add discount");
@@ -120,14 +111,20 @@ function login(){
             products,
           );
 
-          addMore = prompt("Desea agregar mas? (y/n)");
+          add = prompt("Desea agregar mas? (y/n)");
         }
-        if (addMore === 'n') {
+        if (add === 'n') {
           console.log(products)
+          break;
+        } else {
+          console.log(products)
+          break;
         }
-    } else {
-      alert("no pass broda");
-    };
+      }
+      else {
+        alert("no pass broder");
+      }
+    }
 };
 
 login();
