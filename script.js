@@ -177,6 +177,9 @@ login();
 *
 */
 
+
+/*
+
 let intentos = 1;
 console.log(intentos);
 let numeroUsuario = Number(prompt('Elegi un numero'));
@@ -195,4 +198,60 @@ do {
     alert("perdiste burro");
     break;
   }
-} while (numeroUsuario !== numero);
+} while (numeroUsuario !== numero); */
+
+
+/* 
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*/
+
+const productos = [];
+
+function crearProducto(name, price) {
+  return {
+    name: name,
+    price: price,
+  };
+}
+
+function pushearProductos(){
+  productos.push(
+    crearProducto("mate",123),
+    crearProducto("mate",123),
+    crearProducto("mate",123),
+    crearProducto("mate",123),
+  );
+}
+
+console.log(productos);
+
+function stringifearProductos(array){
+  return JSON.stringify(array);
+}
+
+function setearProductos(title, nombreJSON){
+  localStorage.setItem(title, nombreJSON);
+}
+
+pushearProductos();
+let productosJSON = stringifearProductos(productos);
+setearProductos("productosJSEADOS", productosJSON);
