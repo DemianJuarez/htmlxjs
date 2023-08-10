@@ -69,6 +69,32 @@ console.log(listProductos);
 
 createProduct("ball", "Pelota",290,10,"ronaldo")*/
 
+
+/* 
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*/
+
+
+/* 
 let products = [];
 
 function createProduct(title, price, discount, description){
@@ -112,11 +138,7 @@ function login(){
           );
 
           add = prompt("Desea agregar mas? (y/n)");
-        }
-        if (add === 'n') {
-          console.log(products)
-          break;
-        } else {
+        } if (add !== 'y') {
           console.log(products)
           break;
         }
@@ -128,3 +150,49 @@ function login(){
 };
 
 login();
+
+*/
+
+
+/* 
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*/
+
+let intentos = 1;
+console.log(intentos);
+let numeroUsuario = Number(prompt('Elegi un numero'));
+const numero = 7;
+
+do {
+  if (numeroUsuario === numero) {
+    alert("le pegaste muybien");
+  } else {
+    numeroUsuario = Number(prompt(("Ingresa otro numero")))
+    intentos++;
+    console.log(intentos);
+  }
+
+  if (intentos === 3){
+    alert("perdiste burro");
+    break;
+  }
+} while (numeroUsuario !== numero);
