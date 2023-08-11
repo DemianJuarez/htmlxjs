@@ -224,6 +224,7 @@ do {
 *
 */
 
+/*
 const productos = [];
 
 function crearProducto(name, price) {
@@ -255,3 +256,4 @@ function setearProductos(title, nombreJSON){
 pushearProductos();
 let productosJSON = stringifearProductos(productos);
 setearProductos("productosJSEADOS", productosJSON);
+*/
